@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+      title Registration
+      script(type="text/javascript" src="/scripts.js") 
+  a(href='about' style="color:orange;") About
+  br  
+  br  
+  a(href='index' style="color:red;") Login
+  br
+  body
+        form(action='/register', method='POST')
+          br
+          div.label REGISTER NEW USER
+          div.username
+          br
+          
+          input#username.form-control(type='text', placeholder='Username', name='Username')
+
+          
+          div.password
+          br
+         
+          input#password.form-control(type='text', placeholder='Password', name='Password')
+          
+          div.checkbox
+          br
+          
+          
+          button(type= 'submit') Register
+          
+          
