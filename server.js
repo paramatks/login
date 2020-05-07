@@ -6,7 +6,11 @@ const newUserController = require('./controllers/newUser')
 const storeUserController = require ('./controllers/storeUser')
 const bodyParser = require('body-parser')
 const loginUserController = require('./controllers/loginUser')
+const expressSession = require('express-session')
 mongoose.connect('mongodb://localhost/my_database',{useNewUrlParser:true})
+app.use(expressSession({
+ secret:'keyboard cat'
+}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'pug');
