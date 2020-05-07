@@ -1,4 +1,4 @@
-const User = require ('../models/User.js')
+const User = require ('../models/user.js')
 const path = require ('path')
 
 module.exports = (req,res) => {
