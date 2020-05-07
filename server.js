@@ -47,7 +47,7 @@ app.get('/about', (req, res) => {
   console.log(req.body)
   res.redirect('/')
 
-  //app.post('/index',loginUserController)
+  app.post('/',loginUserController)
   })
   
 
