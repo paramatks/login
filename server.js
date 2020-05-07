@@ -5,6 +5,8 @@ const Schema = mongoose.Schema
 const newUserController = require('./controllers/newUser')
 const storeUserController = require ('./controllers/storeUser')
 const bodyParser = require('body-parser')
+const loginUserController = require('./controllers/loginUser')
+const bcrypt = require('brypt')
 mongoose.connect('mongodb://localhost/my_database',{useNewUrlParser:true})
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
@@ -30,14 +32,14 @@ app.get('/about', (req, res) => {
   });
   app.post('/register', storeUserController)
   
-  app.get('/result', (req, res) => {
-    var username = req.query.username;
-    var password = req.query.password;
+  //app.get('/result', (req, res) => {
+    //var username = req.query.username;
+    //var password = req.query.password;
 
-    console.log(username);
-    console.log(password);
+    //console.log(username);
+    //console.log(password);
 
-    res.render('result', {username: username, password: password})
+    //res.render('result', {username: username, password: password})
 
     
     
@@ -45,11 +47,14 @@ app.get('/about', (req, res) => {
     app.post('/controllers/newUser',(req,res)=>{
     console.log(req.body)
     res.redirect('/')
+    app.get ('index',loginUserController)
+
+    app.post('/login',loginUserController)
   })
   
 
 
     
     
-    });
+  
 

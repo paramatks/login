@@ -5,4 +5,5 @@ function myJsFunction(){
     //window.location.href = '/result?username=' + username + '&password=' + password ; 
 
     form(action='/register', method='POST', enctype='multipart/form-data')
+    form(action='/index', method='POST', enctype='multipart/form-data')
  }

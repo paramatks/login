@@ -7,18 +7,19 @@ html(lang="en")
   br
   br
   body
+      form(action='/index', method='POST')
        div.label Login
        div.username
        br
-       input(type="text" placeholder="Username" id="input1")
+       input#username.form-control(type='text' placeholder='Username' name='username')
         
        div.password
        br
-       input(type="password" placeholder="Password" id="input2")
+       input#password.form-control(type='text' placeholder='Password' name='password')
 
        div.checkbox
        br
-       button(onclick='myJsFunction()') Sign in
+       button(type= 'submit') Sign in
        br
        
        br
