@@ -29,6 +29,7 @@ app.get('/about', (req, res) => {
   app.get('/index', (req, res) => {
     res.render ('index') ;
   });
+  
   app.post('/register', storeUserController)
   
   //app.get('/result', (req, res) => {
@@ -47,7 +48,7 @@ app.get('/about', (req, res) => {
   console.log(req.body)
   res.redirect('/')
 
-  app.post('/controllers/loginUser',loginUserController)
+  app.post('/index',loginUserController)
   })
   
 
