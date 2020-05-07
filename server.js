@@ -47,9 +47,12 @@ app.get('/about', (req, res) => {
   app.post('/controllers/newUser',(req,res)=>{
   console.log(req.body)
   res.redirect('/')
+})
+  
 
-  app.post('/index',loginUserController)
-  })
+//app.get('/index', loginUserController);
+  app.post('/index', storeUserController);
+  
   
 
 
