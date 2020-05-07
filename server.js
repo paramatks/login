@@ -6,7 +6,6 @@ const newUserController = require('./controllers/newUser')
 const storeUserController = require ('./controllers/storeUser')
 const bodyParser = require('body-parser')
 const loginUserController = require('./controllers/loginUser')
-const bcrypt = require('brypt')
 mongoose.connect('mongodb://localhost/my_database',{useNewUrlParser:true})
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
@@ -44,12 +43,11 @@ app.get('/about', (req, res) => {
     
     
 
-    app.post('/controllers/newUser',(req,res)=>{
-    console.log(req.body)
-    res.redirect('/')
-    app.get ('index',loginUserController)
+  app.post('/controllers/newUser',(req,res)=>{
+  console.log(req.body)
+  res.redirect('/')
 
-    app.post('/login',loginUserController)
+  //app.post('/index',loginUserController)
   })
   
 

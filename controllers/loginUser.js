@@ -1,12 +1,12 @@
-const bcrypt = require('brypt')
-const User = require('../models/user')
+const bcrypt = require('bcrypt')
+const User = require('../models/user.js')
 
 module.exports = (req, res) =>{
     const { username, password } = req.body;
 
-    User.findOne({username:username}, (error,user) => {
-        if(user){
-            bcrypt.compare(password, user.password, (error, same) =>{
+    User.findOne({username:username}, (error,User) => {
+        if(User){
+            bcrypt.compare(password, User.password, (error, same) =>{
                 if(same){
                     res.redirect('/')
                 }
